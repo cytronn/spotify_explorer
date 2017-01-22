@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/reset.css" charset="utf-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/style.css" charset="utf-8">
+	<title>{{title}}</title>
+</head>
+<body>
+	<div class="home">
+		<div class="home-container">
+			<h1>The spotify explorer</h1>
+			<h2>Browse your favorite artists.</h2>
+			<div class="text-container">
+				<a href="{{url('signup')}}">Begin by Signing up 😁</a>
+				<div class="text"><span>Already a Member?<a href="{{url('login')}}">Log in !</a></span></div>
+				<div class="text"><span>If you're not into this, <a href="{{url('search')}}">start anyway !</a></span></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

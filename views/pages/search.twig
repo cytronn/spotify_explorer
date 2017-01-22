@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/reset.css" charset="utf-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/style.css" charset="utf-8">
+	<title>{{title}}</title>
+</head>
+<body>
+	<header>
+		<a class="logo" href="{{url('home')}}">
+			<div class="left-part">
+				SPOTIFY EXPLORER
+			</div>
+		</a>
+		<div class="right-part">
+			{% if user.name is defined %}
+				<a href="{{url('user', {'user_id': user_id }) }}">My Playlist</a>	
+				<a href="{{url('logout')}}">Log out</a>
+			{% else %}	
+				<a href="{{url('login')}}">Log in</a>
+			{% endif %}
+		</div>
+	</header>
+	<div class="search">
+		<div class="search-container">
+			{% if user.name is defined %}
+			<h1>Hello {{user.name}}</h1>
+			{% else %}
+			<h1>Hello Anonymous User 😎</h1>
+			{% endif %}
+			<label for="search">Search</label>
+			<input id="search" class="searchbar" type="text" placeholder="Madonna...">
+			<div class="results"></div>
+		</div>
+	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script type="text/javascript" src="{{app.request.basepath}}/js/index.js"></script>
+</body>
+</html>

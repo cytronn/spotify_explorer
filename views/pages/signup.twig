@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/reset.css" charset="utf-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/style.css" charset="utf-8">
+	<title>{{title}}</title>
+</head>
+<body>
+	<div class="login">
+		<div class="login-container">
+			<h1>{{main_title}}</h1>
+			<div class="form-container">
+				{{ form_start(contact_form) }}
+				<div class="row">
+				{{ form_label(contact_form.name) }}
+		            {{ form_widget(contact_form.name,{attr:{placeholder:'Anonymous'}}) }}
+				</div>
+				{% if contact_form.email is defined %}
+				<div class="row">
+				{{ form_label(contact_form.email) }}
+					{{ form_widget(contact_form.email,{attr:{placeholder:'anonymouse@nice.waoo'}}) }}
+				</div>
+				{% endif %}
+				<div class="row">
+				{{ form_label(contact_form.password) }}
+					{{ form_widget(contact_form.password, {attr:{placeholder:'* * * * * * *'}})  }}
+				</div>
+				{% if contact_form.confirm is defined %}
+				<div class="row">
+				{{ form_label(contact_form.confirm) }}
+					{{form_widget(contact_form.confirm, {attr:{placeholder:'* * * * * * *'}}) }}
+				</div>
+				{% endif %}
+				<div class="button">
+				{{form_widget(contact_form.submit)}}
+				</div>
+			    {{ form_end(contact_form) }}
+		    </div>
+	    </div>
+	</div>
+</body>
+</html>

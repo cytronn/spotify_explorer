@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/reset.css" charset="utf-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/style.css" charset="utf-8">
+	<title>{{title}}</title>
+</head>
+<body>
+	<header>
+		<a class="logo" href="{{url('home')}}">
+			<div class="left-part">
+				SPOTIFY EXPLORER
+			</div>
+		</a>
+		<div class="right-part">
+			<a href="{{url('search')}}">Search</a>
+			{% if user.id is defined %}
+				<a href="{{url('user', {'user_id': user.id }) }}">My Playlist</a>	
+				<a href="{{url('logout')}}">Log out</a> -->
+			{% else %}	
+				<a href="{{url('login')}}">Log in</a>
+			{% endif %}
+		</div>
+	</header>
+	<div class="artist">
+		<div class="artist-container">
+			<div class="artist-header">
+				<h1>{{informations.name}}</h1>
+				<img src="{{informations.big_image}}" alt="">
+			</div>
+			<div class="artist-content">
+				<h2>TOP TRACK</h2>
+				<h3>{{toptrack.name}}</h3>
+				<div class="top-track">
+					<img class="top-track" src="{{toptrack.image}}" alt="">
+					<audio controls>
+			  			<source src="{{toptrack.preview_url}}">
+					Your browser does not support the audio element.
+					</audio>
+				</div>
+				<div class="albums">
+					<h2>Albums</h2>
+					<div class="albums-container">
+						{% for _album in albums %}
+						<div class="poster">
+							<a href="{{url('album',{album_id:_album.id})}}"><img src="{{_album.image}}" alt=""></a>
+							<a href="{{url('album',{album_id:_album.id})}}"><h3> {{_album.name}}</h3></a>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

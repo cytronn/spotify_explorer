@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/reset.css" charset="utf-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/style.css" charset="utf-8">
+	<title>{{title}}</title>
+</head>
+<body>
+	<header>
+		<a class="logo" href="{{url('home')}}">
+			<div class="left-part">
+				SPOTIFY EXPLORER
+			</div>
+		</a>
+		<div class="right-part">
+			<a href="{{url('search')}}">Search</a>
+			{% if user_id is defined %}
+				<a href="{{url('user', {'user_id': user_id }) }}">My Playlist</a>	
+				<a href="{{url('logout')}}">Log out</a>
+			{% else %}	
+				<a href="{{url('login')}}">Log in</a>
+			{% endif %}
+		</div>
+	</header>
+	<div class="user">
+		<div class="user-container">
+			<div class="user-header">
+				<h1>Collection de {{name}}</h1>
+			</div>	
+			<div class="collection-container">
+				{% for _album in collection %}
+					<div class="poster">
+						<a href="{{url('album',{album_id:_album.spotify_id})}}"><img src="{{_album.picture_url}}" alt=""></a>
+						<a href="{{url('album',{album_id:_album.spotify_id})}}"><h3> {{_album.name}}</h3></a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

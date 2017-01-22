@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/reset.css" charset="utf-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/style.css" charset="utf-8">
+	<title>{{title}}</title>
+</head>
+<body>	
+	<header>
+		<a class="logo" href="{{url('home')}}">
+			<div class="left-part">
+				SPOTIFY EXPLORER
+			</div>
+		</a>
+		<div class="right-part">
+			<a href="{{url('search')}}">Search</a>
+			{% if user_id is defined %}
+				<a href="{{url('user', {'user_id': user_id }) }}">My Playlist</a>	
+				<a href="{{url('logout')}}">Log out</a>
+			{% else %}	
+				<a href="{{url('login')}}">Log in</a>
+			{% endif %}
+		</div>
+	</header>
+	<div class="err">
+		<span class="error">4😓4</span>
+		<span class="not-found">NOT FOUND</span>
+	</div>
+</body>
+</html>

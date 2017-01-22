@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/reset.css" charset="utf-8">
+	<link rel="stylesheet" href="{{app.request.basepath}}/css/style.css" charset="utf-8">
+	<title>{{title}}</title>
+</head>
+<body>
+	<header>
+		<a class="logo" href="{{url('home')}}">
+			<div class="left-part">
+				SPOTIFY EXPLORER
+			</div>
+		</a>
+		<div class="right-part">
+			<a href="{{url('artist', {'artist_id': artist.id})}}">Back to {{artist.name}}</a>	
+			<a href="{{url('search')}}">Search</a>
+			{% if user.id is defined %}
+				<a href="{{url('user', {'user_id': user.id }) }}">My Playlist</a>	
+				<a href="{{url('logout')}}">Log out</a>
+			{% else %}	
+				<a href="{{url('login')}}">Log in</a>
+			{% endif %}
+		</div>
+	</header>
+	<div class="album">
+		<div class="album-container">
+			<div class="album-header">
+				<h1>{{album.name}}</h1>
+				<h2>{{artist.name}}</h2>
+				<div class="informations">				
+					<h3>Date de sortie : {{album.release_date}}</h3>
+					{% if user.name is defined %}
+					<div class="button">
+						{{ form_start(form) }}
+						{{ form_end(form) }}
+					</div>
+					{% endif %}
+				</div>
+
+			</div>
+
+			<img class="album-image" src="{{album.image}}" alt="">
+			<div class="tracklist">
+				<h2>Tracklist : </h2>
+				{% for _track in tracks%}
+				<div class="track">
+					<div class="track-title" ><span>{{_track.track_number}}</span><span>– {{_track.name}} – {{_track.duration}}</span></div>
+					<audio controls>
+							<source src="{{_track.preview_url}}">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</body>
+</html>

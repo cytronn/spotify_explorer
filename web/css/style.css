@@ -1,0 +1,448 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+
+a{
+	text-decoration: none;
+}
+
+/*
+	HEADER
+*/
+
+header{
+	width: 100%;
+	height: 100px;
+	background-color: #23CF5F;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	z-index: 100000000000000000;
+}
+
+/* Sorry for the Z-index I had to overlap the audios in the albums*/
+
+
+header .logo{
+	display: block;
+	font-family: 'Montserrat';
+	font-weight: 700;
+	font-size: 20px;
+	border-right: 1px solid #1f1f1F;
+	text-align: center;
+	height: 100%;
+	width: 20%;
+}
+
+header .left-part{
+	line-height: 100px;
+}
+
+header .right-part{
+	font-family: 'Montserrat';
+	font-size: 18px;
+	width: 50%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin-right: 50px;
+}
+
+header .right-part a{
+	height: 100px;
+	line-height: 100px;
+	display: block;
+	margin-left: 50px;
+}
+/*
+	HOME PAGE
+*/
+.home{
+	width: 100%;
+	height: 100vh;
+	background-color: #fafafa;
+	display: flex;
+   	align-items: center;
+
+}
+
+.home-container{
+	font-family: 'Montserrat';
+	margin: 0 auto;
+	height: 40vh;
+	text-align: center;
+}
+
+.home-container h1{
+	font-weight: 700;
+	font-size: 60px;
+}
+
+.home-container h2{
+	margin-top: 40px;
+	font-size: 28px;
+}
+
+.home-container a{
+	display: block;
+	color: #23CF5F;
+}
+.home-container .text-container{
+	height: ;
+	margin-top: 70px;
+}
+
+.home-container .text-container .text{
+	font-size: 22px;
+	margin-top: 30px;
+}
+
+.home-container a{
+	font-size: 18px;
+}
+
+.home-container span>a{
+	display: block;
+	margin-top: 12px;
+}
+
+/*
+	SIGNUP / LOGIN PAGE
+*/
+
+.login{
+	width: 100%;
+	height: 100vh;
+	background-color: #fafafa;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.login-container{
+	font-family: 'Montserrat';
+	height: 40vh;
+}
+.login-container h1{
+	font-weight: 700;
+	font-size: 48px;
+}
+
+.login-container h2{
+	margin-top: 40px;
+	font-size: 28px;
+}
+
+.form-container{
+	width: 100%;
+}
+.form-container label{
+	display: block;
+	font-size: 20px;
+	margin-top: 30px;
+}
+
+.form-container input{
+	display: block;
+	padding-left: 10px;
+	margin-top: 10px;
+	height: 30px;
+	border: 1px solid #f1f1f1;
+	width: 70%;
+	border-radius: 4px;
+
+}
+
+.form-container .button>button{
+	background-color: #23CF5F;
+	margin-top: 50px;
+	width: 100%;
+	height: 40px;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+
+/*
+	SEARCH PAGE
+*/
+
+.search{
+	width: 100%;
+	height: 100vh;
+	background-color: #fafafa;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search-container{
+	font-family: 'Montserrat';
+	height: 40vh;
+}
+
+.search-container h1{
+	font-weight: 700;
+	font-size: 48px;
+}
+
+.search-container input{
+	display: block;
+	padding-left: 10px;
+	margin-top: 10px;
+	height: 30px;
+	border: 1px solid #f1f1f1;
+	width: 100%;
+	border-radius: 4px;
+
+}
+
+.search-container label{
+	display: block;
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+.search-container .results a{
+	display: block;
+	height: 35px;
+	background-color: #fefefe;
+	line-height: 35px;
+	margin-top: 0px;
+	border-bottom: thin solid #eeeeee;
+	transition: 0.2s ease-in;
+	padding-left: 10px;
+}
+
+.search-container .results a:hover{
+	background-color: #dedede;
+}
+
+/*
+	ARTIST PAGE
+*/
+
+.artist{
+	width: 100%;
+	background-color: #fafafa;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.artist-container{
+	width: 70%;
+	font-family: 'Montserrat';
+}
+.artist-header{
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+.artist-header h1{
+	height: 200px;
+	line-height: 200px;
+ 	font-weight: 700;
+	font-size: 48px;	
+}
+
+.artist-header img{
+	width: 100%;
+	height: 450px;
+	object-fit: cover;
+}
+
+.artist-content{
+	margin-top: 50px;
+}
+.artist-content h2{
+	font-size: 28px;
+}
+
+.artist-content h3
+{
+	font-size: 22px;
+	margin-top: 16px;
+}
+
+.artist-content .top-track{
+	width: 100%;
+}
+.artist-content .top-track img{
+	width: 150px;
+	margin-top: 20px;
+}
+
+.artist-content .albums{
+	margin-top: 50px;
+}
+
+.albums .albums-container{
+	display: flex;
+   	flex-flow: row wrap;
+   	align-items: flex-start;
+}
+
+.albums .albums-container::after{
+  content: "";
+  flex: auto;
+}
+.albums .albums-container .poster{
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 300px;
+}
+
+/*
+	ALBUM PAGE
+*/
+
+.album{
+	width: 100%;
+	background-color: #fafafa;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.album-container{
+	width: 70%;
+	font-family: 'Montserrat';
+}
+
+.album-header{
+	margin-top: 150px;
+	display: flex;
+	flex-direction: column;
+}
+
+.album-header h1{
+	height: 100px;
+	line-height: 100px;
+ 	font-weight: 700;
+	font-size: 48px;	
+}
+
+.album-header h2, .tracklist h2{
+	font-size: 24px;
+}
+
+.album-header .informations{
+	margin-top: 22px;
+}
+
+.album-image{
+	width: 450px;
+}
+
+.album-header .informations button{
+	display: block;
+	background-color: #23CF5F;
+	cursor: pointer;
+	line-height: 40px;
+	padding: 0px 20px;
+	height: 40px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.album .tracklist{
+	margin-top: 50px;
+}
+
+.album .tracklist .track{
+	margin-top: 30px;
+}
+
+.album .tracklist .track-title{
+	display: flex;
+	flex-direction: row;
+}
+
+.album .tracklist audio{
+	margin-top: 10px;
+}
+
+
+/*
+	USER PAGE
+*/
+
+.user{
+	width: 100%;
+	background-color: #fafafa;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+}
+
+.user-container{
+	width: 70%;
+	font-family: 'Montserrat';
+}
+.user-header{
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+}
+
+.user-header h1{
+	height: 200px;
+	line-height: 200px;
+ 	font-weight: 700;
+	font-size: 48px;	
+}
+
+.user .collection-container{
+	display: flex;
+   	flex-flow: row wrap;
+   	align-items: flex-start;
+}
+
+
+.user .collection-container::after{
+  content: "";
+  flex: auto;
+}
+.user .collection-container .poster{
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 300px;
+}
+
+.user .collection-container img{
+	width: 300px;
+}
+
+/*
+	404 PAGE
+*/
+
+.err{
+	width: 100%;
+	background-color: #fafafa;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100vh;
+	font-size: 68px;
+	font-family: 'Montserrat';
+}
+
+span{
+	display: block;
+}
+.error{
+	font-size: 120px;
+}
+.not-found{
+	margin-top: 40px;
+}
